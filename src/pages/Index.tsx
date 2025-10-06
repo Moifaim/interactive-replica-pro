@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen, Target, FileText, History } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { User } from "@supabase/supabase-js";
+import heroBackground from "@/assets/hero-background.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -58,8 +59,13 @@ const Index = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--hero-gradient-start))] to-[hsl(var(--hero-gradient-end))] pt-20">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen relative pt-20">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-gradient-start))]/90 to-[hsl(var(--hero-gradient-end))]/90" />
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-12">
