@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { User } from "@supabase/supabase-js";
+import logoCnes from "@/assets/logo-cnes.png";
 
 export const Navigation = () => {
   const location = useLocation();
@@ -29,8 +30,8 @@ export const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-foreground">
-          Sparrow U
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logoCnes} alt="CNES Logo" className="h-12 w-auto" />
         </Link>
         
         <div className="flex items-center gap-4">
